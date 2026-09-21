@@ -9,6 +9,6 @@ void main() {
 
     // TODO: Make changes here to make the orb move as the light source
     vec3 worldPos = position + orbPosition;
-    gl_Position = projectionMatrix * viewMatrix * vec4(worldPos, 1.0);
+    gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(worldPos, 1.0);
 
 }

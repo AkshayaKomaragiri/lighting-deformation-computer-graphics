@@ -64,7 +64,7 @@ loadAndPlaceOBJ('obj/teapot.obj', teapotMaterial, function (teapot) {
 // Create the sphere geometry
 // https://threejs.org/docs/#api/en/geometries/SphereGeometry
 // TODO: Make the radius of the orb a variable
-const sphereGeometry = new THREE.SphereGeometry(1.0, 32.0, 32.0);
+const sphereGeometry = new THREE.SphereGeometry((orbRadius.value*0.4), 32.0, 32.0);
 const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
 sphere.position.set(0.0, 1.0, 0.0);
 sphere.parent = worldFrame;
@@ -94,7 +94,6 @@ function checkKeyboard() {
   // The following tells three.js that some uniforms might have changed
   teapotMaterial.needsUpdate = true;
   sphereMaterial.needsUpdate = true;
-  sphere.position.copy(orbPosition.value);
   // Move the sphere light in the scene. This allows the floor to reflect the light as it moves.
   sphereLight.position.set(orbPosition.value.x, orbPosition.value.y, orbPosition.value.z);
 }

@@ -8,7 +8,7 @@ uniform float orbRadius;
 void main() {
  	// TODO: Set final rendered colour to intensity (a grey level)
 	vec3 baseColor;
-	if (distanceVal < orbRadius){
+	if (distanceVal <= orbRadius){
 		baseColor = vec3(0.0, 1.0, 0.0) * intensity;
 	}
 	else{
